@@ -1,11 +1,22 @@
 $(document).ready(function() {
   bindSquareOneListener();
+  anthonysSquare();
   // create a function to bind a listener for square two here...
   // it doesn't have to be a click event listener... you could play with ".mouseover"; what else?
 
   // and square three... etc etc
 
 });
+// function anthonysSquare() {
+//   $("#square-4").on("click", function(){
+//     if ($(this).html() === "" ){
+//       aSquareOnClick();
+//       $("img").("visibility", "visible");
+//     } else {
+//       squareOneSecondClick();
+//     }
+//   });
+// }
 
 function bindSquareOneListener() {
   $("#square-1").on("click", function(){
@@ -18,8 +29,21 @@ function bindSquareOneListener() {
   });
 }
 
+// function aSquareOnClick() {
+//   var toSend = 55
+//   var request $.ajax({
+//     type: "POST",
+//     url: "/sams_fun_route",
+//     data: {cool_thing: toSend},
+//     dataType: "html"
+//   }).done(function(response){
+//         $("img").css("visibility", "hidden");
+//         $("#square-1").html(response);
+//         $("#square-1").css({width: "40", height: "90"});
+//   });
+// }
 function squareOneFirstClick() {
-  var toSend = 42
+  var toSend = 55
   var request = $.ajax({
     type: "POST",
     url: "/sams_fun_route",
@@ -27,8 +51,8 @@ function squareOneFirstClick() {
     dataType: "html"
   }).done(function(response) {
         $("img").css("visibility", "hidden");
-        $("#square-1").html(response);
-        $("#square-1").css({width: "300", height: "300"});
+        $("#square-4").html(response);
+        $("#square-4").css({width: "300", height: "300"});
     });
 }
 
