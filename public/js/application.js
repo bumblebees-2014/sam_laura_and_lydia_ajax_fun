@@ -39,10 +39,11 @@ function squareOneSecondClick() {
 
 function bindSquareTwoListener(){
   $("#square-2").hover(function(){
+    $("#square-2").css("background-color", "#003300");
     if ($(this).html() === "") {
       squareTwoHover();
     } else {
-      squareTwoRemove();
+      squareTwoReset();
     }
   });
 }
@@ -59,7 +60,7 @@ function squareTwoHover(){
   });
 }
 
-function squareTwoRemove(){
+function squareTwoReset(){
   $("#square-2").html("");
-  $("#square-2").css("background-color", "#003300");
+  $("#square-2").css("background-color", "#ef3");
 }
