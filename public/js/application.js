@@ -4,7 +4,7 @@ $(document).ready(function() {
   // it doesn't have to be a click event listener... you could play with ".mouseover"; what else?
 
   // and square three... etc etc
-
+  bindSquareTwoListener();
 });
 
 function bindSquareOneListener() {
@@ -35,4 +35,31 @@ function squareOneFirstClick() {
 function squareOneSecondClick() {
   $("#square-1").html("");
   $("#square-1").css({width: "100", height: "100"});
+}
+
+function bindSquareTwoListener(){
+  $("#square-2").hover(function(){
+    if ($(this).html() === "") {
+      squareTwoHover();
+    } else {
+      squareTwoRemove();
+    }
+  });
+}
+
+function squareTwoHover(){
+  var word = "dog"
+  var request = $.ajax({
+    type: "POST",
+    url: "/whatever",
+    data: {cool_thing: word},
+    dataType: "text"
+  }).done(function(response){
+    $("#square-2").prepend(response);
+  });
+}
+
+function squareTwoRemove(){
+  $("#square-2").html("");
+  $("#square-2").css("background-color", "#003300");
 }

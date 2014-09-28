@@ -10,3 +10,12 @@ post '/sams_fun_route' do
   # formulate some HTML with that thing and send the HTML as a response to the AJAX request
   "<h1>GIANT DIV #{inserted.thing}</h1>"
 end
+
+post '/whatever' do
+
+  word_to_insert = (params[:cool_thing]).upcase
+
+  present = CoolThing.where(thing: word_to_insert).first_or_create
+
+  "<b>#{present.thing}</b><br><i>#{present.thing}</i><br><mark>#{present.thing}</mark>"
+end
