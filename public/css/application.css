@@ -29,10 +29,19 @@ img {
 
 #square-3 {
   background-color: #f58;
+  color: #000;
+}
+
+#square-3 p {
+  color: #fff;
 }
 
 #square-4 {
   background-color: #2f9;
+}
+
+#square-4 p {
+  color: #fff;
 }
 
 #square-5 {

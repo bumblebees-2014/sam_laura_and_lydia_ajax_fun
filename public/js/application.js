@@ -1,10 +1,7 @@
 $(document).ready(function() {
   bindSquareOneListener();
-  // create a function to bind a listener for square two here...
-  // it doesn't have to be a click event listener... you could play with ".mouseover"; what else?
-
-  // and square three... etc etc
   bindSquareTwoListener();
+  bindSquareThreeListener();
 });
 
 function bindSquareOneListener() {
@@ -63,4 +60,32 @@ function squareTwoHover(){
 function squareTwoReset(){
   $("#square-2").html("");
   $("#square-2").css("background-color", "#ef3");
+}
+
+function bindSquareThreeListener(){
+  $("#square-3").dblclick(function(){
+    if ($(this).html() === "") {
+      squareThreeDbl();
+      $("#square-3").css("background-image", 'url("../img/scotland.jpg")');
+    } else {
+      squareThreeReset();
+    }
+  });
+}
+
+function squareThreeDbl(){
+  var cows = "CoWs"
+  var request = $.ajax({
+    type: "POST",
+    url: "/scotland",
+    data: {cool_thing: cows},
+    dataType: "text"
+  }).done(function(response){
+    $("#square-3").html(response);
+  })
+}
+
+function squareThreeReset(){
+  $("#square-3").html("");
+  $("#square-3").css('background-image', "");
 }

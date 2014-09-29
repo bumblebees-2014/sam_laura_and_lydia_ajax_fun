@@ -19,3 +19,11 @@ post '/whatever' do
 
   "<b>#{present.thing}</b><br><i>#{present.thing}</i><br><mark>#{present.thing}</mark>"
 end
+
+post '/scotland' do
+  cows = (params[:cool_thing]).swapcase
+
+  herd = CoolThing.where(thing: cows).first_or_create
+
+  "<h2>#{herd.thing}</h2><p>First 100x100<br>pic googling Scotland.</p>"
+end
